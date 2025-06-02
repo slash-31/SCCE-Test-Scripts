@@ -1,0 +1,58 @@
+{
+  "search_private_keys_or_passwords": {
+    "description": "Credential Access: Search Private Keys or Passwords",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-search-private-keys-or-passwords-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/find; /tmp/find id_rsa\""
+  },
+  "launch_code_compiler": {
+    "description": "Defense Evasion: Launch Code Compiler Tool In Container",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-launch-code-compiler-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/gcc10; /tmp/gcc10 -o /tmp/gcc10.o\""
+  },
+  "added_malicious_binary": {
+    "description": "Execution: Added Malicious Binary Executed",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-added-malicious-binary-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- sh -c \"touch /tmp/test_mal_file; echo -n 'X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*' > /tmp/test_mal_file; chmod 700 /tmp/test_mal_file; /tmp/test_mal_file; sleep 10\""
+  },
+  "container_escape": {
+    "description": "Execution: Container Escape",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-container-escape-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/botb-linux-amd64; /tmp/botb-linux-amd64 -autopwn\""
+  },
+  "ingress_nightmare": {
+    "description": "Execution: Ingress Nightmare Vulnerability Execution",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-ingress-nightmare-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/nginx; /tmp/nginx /proc/1/fd/1\""
+  },
+  "kubernetes_attack_tool": {
+    "description": "Execution: Kubernetes Attack Tool Execution",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-kubernetes-attack-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/amicontained; /tmp/amicontained\""
+  },
+  "local_recon": {
+    "description": "Execution: Local Reconnaissance Tool Execution",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-local-reconn-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/linenum.sh; /tmp/linenum.sh\""
+  },
+  "malicious_python": {
+    "description": "Execution: Malicious Python Executed",
+    "command": "kubectl run --restart=Never --rm=true  -i --image marketplace.gcr.io/google/python:latest ktd-test-malicious-python-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- python -c \"import urllib.request, base64, os; url = 'https://pastebin.com/raw/Z'; page = ''; exec(page)\""
+  },
+  "modified_malicious_binary": {
+    "description": "Execution: Modified Malicious Binary Executed",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-modified-malicious-binary-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- sh -c \"echo -n 'X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*' > /bin/ls; /bin/ls; sleep 10\""
+  },
+  "netcat_remote_code_exec": {
+    "description": "Execution: Netcat Remote Code Execution In Container",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-netcat-remote-code-exec-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/netcat; /tmp/netcat --sh-exec\""
+  },
+  "possible_remote_cmd_exec": {
+    "description": "Execution: Possible Remote Command Execution Detected",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-remote-cmd-exec-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/touch; echo Hello | /tmp/touch >& /dev/tcp/8.8.8.8/53\""
+  },
+  "program_http_proxy": {
+    "description": "Execution: Program Run with Disallowed HTTP Proxy Env",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-program-with-http-proxy-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/curl; HTTP_PROXY=127.0.0.1:8080 /tmp/curl\""
+  },
+  "launch_remote_file_copy": {
+    "description": "Exfiltration: Launch Remote File Copy Tools In Container",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-launch-remote-file-copy-tools-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/rsync; /tmp/rsync\""
+  },
+  "detect_malicious_cmdlines": {
+    "description": "Impact: Detect Malicious Cmdlines",
+    "command": "kubectl run --restart=Never --rm=true -i --image marketplace.gcr.io/google/ubuntu2404:latest ktd-test-detect-malicious-cmdlines-$(date -u +%Y-%m-%d-%H-%M-%S-utc) -- bash -c \"cp /bin/ls /tmp/ipfs; /tmp/ipfs\""
+  }
+}
