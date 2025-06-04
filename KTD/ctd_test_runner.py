@@ -1559,55 +1559,55 @@ def main():
         epilog="""
 Examples:
   # Create a new GCP project with Binary Authorization
-  python %(prog)s -cp -o ORG_ID -b BILLING_ID
+  python3 %(prog)s -cp -o ORG_ID -b BILLING_ID
 
   # Create a full secure setup (Project, VPC, Subnet, Secure GKE with Binary Auth)
-  python %(prog)s -cg -o ORG_ID -b BILLING_ID -r REGION
+  python3 %(prog)s -cg -o ORG_ID -b BILLING_ID -r REGION
 
   # Create VPC and secure GKE in an existing project
-  python %(prog)s -cvg -p PROJECT_ID -r REGION
+  python3 %(prog)s -cvg -p PROJECT_ID -r REGION
 
   # Create secure GKE in an existing project and VPC/Subnet
-  python %(prog)s -cgke -p PROJECT_ID --vpc VPC_NAME --subnet SUBNET_NAME -r REGION
+  python3 %(prog)s -cgke -p PROJECT_ID --vpc VPC_NAME --subnet SUBNET_NAME -r REGION
 
   # Update Binary Authorization policy to be more restrictive
-  python %(prog)s --update-binauthz -p PROJECT_ID --policy-mode ALWAYS_DENY
+  python3 %(prog)s --update-binauthz -p PROJECT_ID --policy-mode ALWAYS_DENY
 
   # Update Binary Authorization policy for specific cluster
-  python %(prog)s --update-binauthz -p PROJECT_ID -n CLUSTER_NAME -r REGION --policy-mode REQUIRE_ATTESTATION
+  python3 %(prog)s --update-binauthz -p PROJECT_ID -n CLUSTER_NAME -r REGION --policy-mode REQUIRE_ATTESTATION
 
   # Delete a GKE cluster
-  python %(prog)s -dg -p PROJECT_ID -n CLUSTER_NAME -r REGION
+  python3 %(prog)s -dg -p PROJECT_ID -n CLUSTER_NAME -r REGION
 
   # Delete a VPC
-  python %(prog)s -dv -p PROJECT_ID --vpc VPC_NAME
+  python3 %(prog)s -dv -p PROJECT_ID --vpc VPC_NAME
 
   # Delete a Subnet
-  python %(prog)s -ds -p PROJECT_ID --subnet SUBNET_NAME -r REGION
+  python3 %(prog)s -ds -p PROJECT_ID --subnet SUBNET_NAME -r REGION
 
   # Delete a Project (and all its resources)
-  python %(prog)s -dp -p PROJECT_ID
+  python3 %(prog)s -dp -p PROJECT_ID
 
   # Check if a project exists
-  python %(prog)s --check-project -p PROJECT_ID
+  python3 %(prog)s --check-project -p PROJECT_ID
 
   # Check if a VPC exists
-  python %(prog)s --check-vpc -p PROJECT_ID --vpc VPC_NAME
+  python3 %(prog)s --check-vpc -p PROJECT_ID --vpc VPC_NAME
 
   # Check if a Subnet exists
-  python %(prog)s --check-subnet -p PROJECT_ID --subnet SUBNET_NAME -r REGION
+  python3 %(prog)s --check-subnet -p PROJECT_ID --subnet SUBNET_NAME -r REGION
 
   # Check if a GKE cluster exists
-  python %(prog)s --check-gke -p PROJECT_ID -n CLUSTER_NAME -r REGION
+  python3 %(prog)s --check-gke -p PROJECT_ID -n CLUSTER_NAME -r REGION
 
   # Create default configuration file with Binary Authorization settings
-  python %(prog)s --init-config
+  python3 %(prog)s --init-config
 
   # Dry run mode (simulate operations without executing)
-  python %(prog)s -cp -o ORG_ID -b BILLING_ID --dry-run
+  python3 %(prog)s -cp -o ORG_ID -b BILLING_ID --dry-run
 
   # Specify custom output file for JSON results
-  python %(prog)s -cg -o ORG_ID -b BILLING_ID -r REGION --output-file custom_resources.json
+  python3 %(prog)s -cg -o ORG_ID -b BILLING_ID -r REGION --output-file custom_resources.json
         """
     )
     
